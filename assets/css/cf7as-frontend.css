@@ -1,0 +1,16 @@
+/**
+ * CF7 Anti-Spam Shield — Frontend styles.
+ *
+ * Hides the honeypot field from human visitors.
+ *
+ * @package CF7_Anti_Spam_Shield
+ * @since   1.0.0
+ */
+.cf7as-hp-wrap {
+	position: absolute !important;
+	left: -9999px !important;
+	height: 0 !important;
+	width: 0 !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+}
