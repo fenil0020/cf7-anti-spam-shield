@@ -44,8 +44,8 @@ class CF7AS_Form {
 	public static function inject_fields( $content ) {
 		$fields  = '<input type="hidden" name="cf7as_ts" value="" />';
 		$fields .= '<div class="cf7as-hp-wrap" aria-hidden="true" tabindex="-1">';
-		$fields .= '<label>' . esc_html__( 'Website URL', 'cf7-anti-spam-shield' );
-		$fields .= ' <input type="text" name="cf7as_website_url" value="placeholder" autocomplete="off" tabindex="-1" />';
+		$fields .= '<label>' . esc_html__( 'Leave empty', 'cf7-anti-spam-shield' );
+		$fields .= ' <input type="text" name="cf7as_hp_field" value="" autocomplete="new-password" tabindex="-1" />';
 		$fields .= '</label></div>';
 
 		/**

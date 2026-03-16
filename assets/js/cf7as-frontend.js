@@ -19,7 +19,7 @@
 				tsField.value = Math.floor( Date.now() / 1000 );
 			}
 
-			var trapField = form.querySelector( 'input[name="cf7as_website_url"]' );
+			var trapField = form.querySelector( 'input[name="cf7as_hp_field"]' );
 			if ( trapField ) {
 				trapField.value = '';
 			}

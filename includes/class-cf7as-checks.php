@@ -93,7 +93,7 @@ class CF7AS_Checks {
 	 */
 	public static function check_honeypot() {
 		// phpcs:ignore WordPress.Security.NonceVerification.Missing
-		$trap = isset( $_POST['cf7as_website_url'] ) ? sanitize_text_field( wp_unslash( $_POST['cf7as_website_url'] ) ) : '';
+		$trap = isset( $_POST['cf7as_hp_field'] ) ? sanitize_text_field( wp_unslash( $_POST['cf7as_hp_field'] ) ) : '';
 		if ( ! empty( $trap ) ) {
 			return 'honeypot_filled';
 		}
@@ -230,7 +230,7 @@ class CF7AS_Checks {
 
 		$skip = array(
 			'cf7as_ts',
-			'cf7as_website_url',
+			'cf7as_hp_field',
 			'_wpcf7',
 			'_wpcf7_version',
 			'_wpcf7_locale',
