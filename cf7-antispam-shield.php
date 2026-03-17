@@ -3,8 +3,8 @@
  * CF7 Anti-Spam Shield
  *
  * @package           CF7AS_Plugin
- * @author            Supple Solutions
- * @copyright         2026 Supple Solutions
+ * @author            Supple
+ * @copyright         2026 Supple
  * @license           GPL-2.0-or-later
  *
  * @wordpress-plugin
@@ -14,7 +14,7 @@
  * Version:           1.0.0
  * Requires at least: 5.5
  * Requires PHP:      7.4
- * Author:            Supple Solutions
+ * Author:            Supple
  * Author URI:        https://supple.com.au
  * Text Domain:       cf7-anti-spam-shield
  * License:           GPL v2 or later
