@@ -10,13 +10,15 @@
 ( function () {
 	'use strict';
 
-	document.addEventListener( 'DOMContentLoaded', function () {
+	var pageLoadTime = Math.floor( Date.now() / 1000 );
+
+	function initForms() {
 		var forms = document.querySelectorAll( '.wpcf7-form' );
 
 		forms.forEach( function ( form ) {
 			var tsField = form.querySelector( 'input[name="cf7as_ts"]' );
-			if ( tsField ) {
-				tsField.value = Math.floor( Date.now() / 1000 );
+			if ( tsField && ! tsField.value ) {
+				tsField.value = pageLoadTime;
 			}
 
 			var trapField = form.querySelector( 'input[name="cf7as_hp_field"]' );
@@ -24,7 +26,27 @@
 				trapField.value = '';
 			}
 		} );
+	}
 
+	// Set timestamp on page load.
+	if ( 'loading' === document.readyState ) {
+		document.addEventListener( 'DOMContentLoaded', initForms );
+	} else {
+		initForms();
+	}
+
+	// Also set timestamp on any form submit as a fallback.
+	document.addEventListener( 'submit', function ( e ) {
+		if ( ! e.target.classList.contains( 'wpcf7-form' ) ) {
+			return;
+		}
+		var tsField = e.target.querySelector( 'input[name="cf7as_ts"]' );
+		if ( tsField && ! tsField.value ) {
+			tsField.value = pageLoadTime;
+		}
+	}, true );
+
+	document.addEventListener( 'DOMContentLoaded', function () {
 		if ( typeof cf7as_settings !== 'undefined' && cf7as_settings.disable_submit ) {
 			document.addEventListener( 'wpcf7beforesubmit', function ( e ) {
 				var btn = e.target.querySelector( 'input[type="submit"], button[type="submit"]' );
